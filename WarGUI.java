@@ -22,17 +22,19 @@ public class WarGUI extends JFrame
    
    private War newGame;
    private ImageIcon computerLabelIcon, playerLabelIcon;
-   private int winner;
+   private String winner;
    
+   private ArrayList<Card> playerWinnings, computerWinnings;
    private boolean gameOver;
-   private Card userCard, compCard;
+   private Card userCard, compCard, userCard2, compCard2, userCard3, compCard3;
     
    public WarGUI()
    {
       
             
-     //  War newGame = new War();
-      
+   playerWinnings = new ArrayList<Card>();
+   computerWinnings = new ArrayList<Card>();
+          
       centerPanel = new JPanel(new GridLayout(1,2));
       
       //declare computer panel
@@ -98,7 +100,7 @@ public class WarGUI extends JFrame
       //title.setForeGround(Color.RED);
       topPanel.add(title);
       
-      status = new JLabel("Player Score = " + playerScore + " " + "Computer Score = " + computerScore);
+      status = new JLabel(" Computer Score = " + playerScore + " " + " Player Score = " + computerScore);
       status.setFont(new Font("ARIAL",Font.BOLD,24));
       bottomPanel.add(status);
 
@@ -119,18 +121,100 @@ public class WarGUI extends JFrame
             userCard = newGame.drawPlayerCard();
             compCard = newGame.drawComputerCard();
             
-            System.out.println(userCard);
             
             //change image icons to those of drawn cards
-            computerLabelIcon = userCard.getCardImage();
-            playerLabelIcon = compCard.getCardImage();
-            
+            if (newGame.isEmpty())
+            {
+                computerLabelIcon = new ImageIcon("images/back.jpg");
+                playerLabelIcon = new ImageIcon("images/back.jpg");
+   
+                computerCard.setIcon(computerLabelIcon);
+                playerCard.setIcon(playerLabelIcon);
+            }
+            else
+            {
+               computerLabelIcon = compCard.getCardImage();
+               playerLabelIcon = userCard.getCardImage();
+            }
             //set label to new image Icon
             computerCard.setIcon(computerLabelIcon);
             playerCard.setIcon(playerLabelIcon);
- 
-            winner = newGame.getWinner();
-            System.out.println(winner);         
+            
+            if (!newGame.isEmpty())
+            { 
+               if (compCard.getRank() > userCard.getRank())
+               {
+                  //computer win      
+                  computerWinnings.add(userCard);
+                  computerWinnings.add(compCard);
+               
+                  status.setText(" Computer Score = " + computerWinnings.size()  + " Player Score = " + playerWinnings.size() );    
+               }
+               
+               else if (userCard.getRank() > compCard.getRank())
+               {
+                  //player win
+                  playerWinnings.add(userCard);
+                  playerWinnings.add(compCard);
+               
+                  status.setText(" Computer Score = " + computerWinnings.size() + " Player Score = " + playerWinnings.size());
+            
+               }
+               
+               else if (userCard.getRank() == compCard.getRank())
+               {
+                  userCard2 = newGame.drawPlayerCard();
+                  compCard2 = newGame.drawComputerCard();
+                  
+                  status.setText("WAR!");
+                  
+                  userCard3 = newGame.drawPlayerCard();
+                  compCard3 = newGame.drawComputerCard();
+                  
+                  if (compCard3.getRank() > userCard3.getRank())
+                  {
+                     //computer win      
+                     computerWinnings.add(userCard);
+                     computerWinnings.add(compCard);
+                     computerWinnings.add(userCard2);
+                     computerWinnings.add(compCard2);
+                     computerWinnings.add(userCard3);
+                     computerWinnings.add(compCard3);
+               
+                     status.setText(" Computer Score = " + computerWinnings.size()  + " Player Score = " + playerWinnings.size() );    
+                  }  
+               
+               else if (userCard3.getRank() > compCard3.getRank())
+               {
+                     //player win
+                     playerWinnings.add(userCard);
+                     playerWinnings.add(compCard);
+                     playerWinnings.add(userCard2);
+                     playerWinnings.add(compCard2);
+                     playerWinnings.add(userCard3);
+                     playerWinnings.add(compCard3);
+               
+                     status.setText(" Computer Score = " + computerWinnings.size() + " Player Score = " + playerWinnings.size());
+            
+               }
+                  
+                                    
+                    
+               }
+             }  
+             else
+               {
+                  //out of cards
+                  if (playerWinnings.size() > computerWinnings.size())
+                     winner = "Player wins!";
+                  else
+                     winner = "Computer wins!";
+                   
+                  status.setText("Game Over : " + winner);
+               
+                           
+               }
+                       
           }
   
       }

@@ -1,3 +1,7 @@
+//Canaan Mckenzie
+//CS 110 Final Project
+//Deck class
+
 import java.util.Random;
 import java.util.ArrayList;
 	 

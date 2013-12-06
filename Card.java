@@ -160,7 +160,7 @@ in this class
          case "10|Hearts" :   cardImage = new ImageIcon("images/10h.jpg");break;
          case "10|Spades" :   cardImage = new ImageIcon("images/10s.jpg");break;
          case "2|Clubs" :    cardImage = new ImageIcon("images/2c.jpg");break;
-         case "2|Diamonds" :    cardImage = new ImageIcon("images)/2d.jpg");break;
+         case "2|Diamonds" :    cardImage = new ImageIcon("images/2d.jpg");break;
          case "2|Hearts" :    cardImage = new ImageIcon("images/2h.jpg");break;
          case "2|Spades" :    cardImage = new ImageIcon("images/2s.jpg");break;
          case "3|Clubs":   cardImage = new ImageIcon("images/3c.jpg");break;
@@ -195,22 +195,22 @@ in this class
          case "9|Hearts":  cardImage = new ImageIcon("images/9h.jpg");break;
          case "9|Spades" :  cardImage = new ImageIcon("images/9s.jpg");break;
  
-         case "Ace|Clubs" :   cardImage = new ImageIcon("images/acec.jpg");
-         case "Ace|Diamonds" :   cardImage = new ImageIcon("images/aced.jpg");
-         case "Ace|Hearts" :   cardImage = new ImageIcon("images/aceh.jpg");
-         case "Ace|Spades" :   cardImage = new ImageIcon("images/aces.jpg");
-         case "Jack|Clubs" :    cardImage = new ImageIcon("images/jackc.jpg");
-         case "Jack|Diamonds" :    cardImage = new ImageIcon("images/jackd.jpg");
-         case "Jack|Hearts" :    cardImage = new ImageIcon("images/jackh.jpg");
-         case "Jack|Spades" :    cardImage = new ImageIcon("images/jacks.jpg");
-         case "Queen|Clubs":   cardImage = new ImageIcon("images/queenc.jpg");
-         case "Queen|Diamonds":  cardImage = new ImageIcon("images/queend.jpg");
-         case "Queen|Hearts":  cardImage = new ImageIcon("images/queenh.jpg");
-         case "Queen|Spades" :  cardImage = new ImageIcon("images/queens.jpg");
-         case "King|Clubs":   cardImage = new ImageIcon("images/kingc.jpg");
-         case "King|Diamonds":  cardImage = new ImageIcon("images/kingd.jpg");
-         case "King|Hearts":  cardImage = new ImageIcon("images/kingh.jpg");
-         case "King|Spades" :  cardImage = new ImageIcon("images/kings.jpg");
+         case "Ace|Clubs" :   cardImage = new ImageIcon("images/acec.jpg");break;
+         case "Ace|Diamonds" :   cardImage = new ImageIcon("images/aced.jpg");break;
+         case "Ace|Hearts" :   cardImage = new ImageIcon("images/aceh.jpg");break;
+         case "Ace|Spades" :   cardImage = new ImageIcon("images/aces.jpg");break;
+         case "Jack|Clubs" :    cardImage = new ImageIcon("images/jackc.jpg");break;
+         case "Jack|Diamonds" :    cardImage = new ImageIcon("images/jackd.jpg");break;
+         case "Jack|Hearts" :    cardImage = new ImageIcon("images/jackh.jpg");break;
+         case "Jack|Spades" :    cardImage = new ImageIcon("images/jacks.jpg");break;
+         case "Queen|Clubs":   cardImage = new ImageIcon("images/queenc.jpg");break;
+         case "Queen|Diamonds":  cardImage = new ImageIcon("images/queend.jpg");break;
+         case "Queen|Hearts":  cardImage = new ImageIcon("images/queenh.jpg");break;
+         case "Queen|Spades" :  cardImage = new ImageIcon("images/queens.jpg");break;
+         case "King|Clubs":   cardImage = new ImageIcon("images/kingc.jpg");break;
+         case "King|Diamonds":  cardImage = new ImageIcon("images/kingd.jpg");break;
+         case "King|Hearts":  cardImage = new ImageIcon("images/kingh.jpg");break;
+         case "King|Spades" :  cardImage = new ImageIcon("images/kings.jpg");break;
 
  
       }   

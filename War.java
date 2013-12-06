@@ -16,6 +16,7 @@ public class War
    private ArrayList<Card> playerCardStack, computerCardStack;
    private ImageIcon playerCardImage, computerCardImage;
    private Deck2 warDeck;
+   private boolean isEmpty = false;
    
    public War()
    {
@@ -45,51 +46,29 @@ public class War
    
    public Card drawPlayerCard()
    {
- 
+      if (playerCardStack.size() == 0)
+      {
+         isEmpty = true;
+         return null;
+      }
+      
+      else
       return playerCardStack.remove(0);        
    }
    
    
    public Card drawComputerCard()
    {
-      return computerCardStack.remove(0);
+     if (playerCardStack.size() == 0)
+     {   
+         isEmpty = true;
+         return null;
+     }
+     else
+     return computerCardStack.remove(0);
+      
    }  
    
-   
-   public void war()
-   {
-         
-   }
-   
-   public int getWinner()
-   {
-      
-      if (getPlayerCard().getRank() < getComputerCard().getRank())
-         {
-            winner = COMPUTER_WIN;
-
-         }
-         
-         
-      else if (getPlayerCard().getRank() > getComputerCard().getRank())
-       {
-         winner = PLAYER_WIN;
-         
-    
-       }
-        
-      else if (getPlayerCard() == null || getComputerCard() == null)
-         winner = OUT_OF_CARDS;
-         
-         
-      else if (getPlayerCard().getRank() == getComputerCard().getRank())
-      {
-         winner = WAR;
-      }   
-      return winner;
-   
-   }
-    
    
    public int getPlayerStackSize()
    {
@@ -114,14 +93,8 @@ public class War
       return computerCardStack.get(0);
    }
    
-
-
-//    public static void main(String [] args)
-//    {
-//       War war = new War();
-//       for(int i = 0; i < 26; i++)
-//       {
-//          System.out.println(war.drawPlayerCard());   
-//       }
-//    }
+   public boolean isEmpty()
+   {
+      return isEmpty;
+   }
 }  
